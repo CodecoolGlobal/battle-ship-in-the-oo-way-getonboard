@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace specifications
+namespace battle_ship_in_the_oo_way_getonboard
 {
     class Program
     {
