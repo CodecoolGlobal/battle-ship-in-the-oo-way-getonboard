@@ -19,7 +19,7 @@ namespace battle_ship_in_the_oo_way_getonboard
 
             ocean.PlaceShips(shipList); 
             Console.WriteLine(ocean);
-            Console.ResetColor(); 
+
         }
     }
 }

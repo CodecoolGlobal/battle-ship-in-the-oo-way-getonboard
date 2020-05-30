@@ -46,7 +46,8 @@ namespace battle_ship_in_the_oo_way_getonboard
     
     public override string ToString()
         {
-            string printBoard = "";
+            string printBoard = "  1 2 3 4 5 6 7 8 9 10\n +--------------------+\n";
+            List<string> alphabet = new List<string>{"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O","P","Q","R","S","T","W","X","Y","Z"};
 
             for (int y = 0; y < WIDTH; y++)
             {
@@ -54,10 +55,11 @@ namespace battle_ship_in_the_oo_way_getonboard
 
                 for (int x = 0; x < HEIGHT; x++)
                 {
-                    printRow += Board[y][x];
+                    printRow += Board[y][x] + " ";
                 } 
-                printBoard += printRow + "\n";
+                printBoard += alphabet[y] + "|" + printRow + "|" +"\n";
             }     
+            printBoard += " +--------------------+";
             return printBoard;          
         }
 

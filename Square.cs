@@ -45,21 +45,15 @@ namespace battle_ship_in_the_oo_way_getonboard
         {
             if (isHit == true)
             {
-                Console.ForegroundColor = ConsoleColor.Red;
                 symbol = "X";    
             }
             else if (isShip == true)
             {
-                Console.BackgroundColor = ConsoleColor.Gray;
                 symbol = "@";
-                Console.ResetColor(); 
-
             }
             else
             {
-                Console.BackgroundColor = ConsoleColor.DarkBlue;
                 symbol = " ";
-
             }
         return symbol;
         }
