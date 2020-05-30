@@ -6,25 +6,40 @@ namespace battle_ship_in_the_oo_way_getonboard
 
     public class Ship
     {
-    private List<Square> squares;
-    private int YCoordinates = 3;
-    private int XCoordinates = 3;
-    private int shipLength = 3;
-    private bool isVertical = false;
+    private List<Square> Squares;
+    private int ShipLength = 3;
+    private bool isVertical;
 
-    public Ship(List<Square> squares, int YCoordinates, int XCoordinates, int shipLength, bool isVertical)
+    public Ship(int shipLength, bool isVertical, int yCoordinates, int xCoordinates)
         {
-            this.squares = squares;
-            this.YCoordinates = YCoordinates;
-            this.XCoordinates = XCoordinates;
-            this.shipLength = shipLength;
+            this.Squares = new List<Square> ();
+            this.ShipLength = shipLength;
             this.isVertical = isVertical;
-        }
 
-    public override string ToString()
-        {
-        
+            for (int i = 0; i < ShipLength; i++)
+            {
+                if (isVertical)
+                {
+                    Squares.Add(new Square(yCoordinates + i, xCoordinates, true));
+                }
+                else
+                {
+                    Squares.Add(new Square(yCoordinates, xCoordinates + i, true));
+                }
+                
+            }
+
         }
+    
+    public int GetLength()
+    {
+        return ShipLength;
+    }
+
+    public Square GetSquare(int index)
+    {
+        return Squares[index];
+    }
 
     }
 }
