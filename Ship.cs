@@ -7,7 +7,7 @@ namespace battle_ship_in_the_oo_way_getonboard
     public class Ship
     {
     private List<Square> Squares;
-    private int ShipLength = 3;
+    private int ShipLength;
     private bool isVertical;
 
     public Ship(int shipLength, bool isVertical, int yCoordinates, int xCoordinates)

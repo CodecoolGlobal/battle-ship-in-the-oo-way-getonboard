@@ -13,12 +13,13 @@ namespace battle_ship_in_the_oo_way_getonboard
             shipList.Add(new Ship(3, false, 9, 3));
             shipList.Add(new Ship(2, true, 2, 2));
             shipList.Add(new Ship(3, false, 4, 6));
+    
 
             Ocean ocean = new Ocean();
 
-            ocean.PlaceShips(shipList);
-
+            ocean.PlaceShips(shipList); 
             Console.WriteLine(ocean);
+            Console.ResetColor(); 
         }
     }
 }

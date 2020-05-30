@@ -14,7 +14,7 @@ namespace battle_ship_in_the_oo_way_getonboard
     public Ocean()
         {
             this.Board = new List<List<Square>>();
-            List<Square> boardRow = new List<Square>{};
+            List<Square> boardRow = new List<Square>();
             
             for (int y = 0; y < WIDTH; y++)
             {

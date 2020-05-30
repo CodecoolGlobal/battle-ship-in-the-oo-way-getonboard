@@ -6,6 +6,8 @@ namespace battle_ship_in_the_oo_way_getonboard
     public class Square
     {
     private bool isHit;
+    private bool isMissed;
+    private bool isShip;
     private int YCoordinates;
     private int XCoordinates;
     private string symbol;
@@ -16,11 +18,11 @@ namespace battle_ship_in_the_oo_way_getonboard
         this.XCoordinates = xCoordinates;
     }
 
-    public Square(int yCoordinates, int xCoordinates, bool isHit)
+    public Square(int yCoordinates, int xCoordinates, bool isShip)
     {
         this.YCoordinates = yCoordinates;
         this.XCoordinates = xCoordinates;
-        this.isHit = isHit;
+        this.isShip = isShip;
     }
     
     public void IsHit()
@@ -43,11 +45,21 @@ namespace battle_ship_in_the_oo_way_getonboard
         {
             if (isHit == true)
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 symbol = "X";    
+            }
+            else if (isShip == true)
+            {
+                Console.BackgroundColor = ConsoleColor.Gray;
+                symbol = "@";
+                Console.ResetColor(); 
+
             }
             else
             {
-                symbol = "_";
+                Console.BackgroundColor = ConsoleColor.DarkBlue;
+                symbol = " ";
+
             }
         return symbol;
         }
