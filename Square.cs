@@ -30,6 +30,11 @@ namespace battle_ship_in_the_oo_way_getonboard
             isHit = true;
         }
 
+    public void IsMissed()
+        {
+            isMissed = true;
+        }
+
     public int GetX()
     {
         return XCoordinates;
@@ -43,13 +48,23 @@ namespace battle_ship_in_the_oo_way_getonboard
 
     public override string ToString()
         {
-            if (isHit == true)
-            {
-                symbol = "X";    
-            }
-            else if (isShip == true)
+
+            if (isShip == true)
             {
                 symbol = "@";
+
+                if (isHit == true)
+                {
+                    symbol = "X";    
+                }
+                else
+                {
+                    symbol = "@";
+                }
+            }
+            else if (isMissed == true)
+            {
+                symbol = "*";
             }
             else
             {
@@ -57,7 +72,6 @@ namespace battle_ship_in_the_oo_way_getonboard
             }
         return symbol;
         }
-
 
     }
 
