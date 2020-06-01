@@ -8,7 +8,6 @@ namespace battle_ship_in_the_oo_way_getonboard
         public string Name {get; set;}
         public List<Ship> shipList {get; set;}
         public Ocean PlayerBoard {get; set;}
-
         public Player(string name)
         {
             Name = name;
