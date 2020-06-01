@@ -7,9 +7,7 @@ namespace battle_ship_in_the_oo_way_getonboard
     {
     private static int WIDTH = 10;
     private static int HEIGHT = 10;
-
-    private List<List<Square>> Board;
-    //private List<Ship> Ships;
+    public List<List<Square>> Board;
 
     public Ocean()
         {

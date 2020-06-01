@@ -8,17 +8,12 @@ namespace battle_ship_in_the_oo_way_getonboard
     {
         static void Main(string[] args)
         {
-            var shipList = new List<Ship>();
-            shipList.Add(new Ship(4, true, 5, 0));
-            shipList.Add(new Ship(3, false, 9, 3));
-            shipList.Add(new Ship(2, true, 2, 2));
-            shipList.Add(new Ship(3, false, 4, 6));
-    
+            var Player1 = new Player("playername");
 
-            Ocean ocean = new Ocean();
+            Player1.CreateShip();
+            Player1.PlayerBoard.PlaceShips(Player1.shipList);
+            Console.WriteLine(Player1.PlayerBoard);
 
-            ocean.PlaceShips(shipList); 
-            Console.WriteLine(ocean);
 
         }
     }
