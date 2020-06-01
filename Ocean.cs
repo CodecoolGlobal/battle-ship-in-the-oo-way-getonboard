@@ -42,6 +42,31 @@ namespace battle_ship_in_the_oo_way_getonboard
         }
     }
     
+
+    public void RevealAllShips()
+    {
+        foreach (List<Square> boardRow in Board)
+        {
+            foreach (Square Square in boardRow)
+            {
+                Square.SetIsVisibleTrue();
+            }
+        }
+
+    }
+
+    public void HideAllShips()
+    {
+        foreach (List<Square> boardRow in Board)
+        {
+            foreach (Square Square in boardRow)
+            {
+                Square.SetIsVisibleFalse();
+            }
+        }
+    }
+
+
     public override string ToString()
         {
             string printBoard = "  1 2 3 4 5 6 7 8 9 10\n +--------------------+\n";

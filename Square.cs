@@ -8,7 +8,7 @@ namespace battle_ship_in_the_oo_way_getonboard
     private bool isHit;
     private bool isMissed;
     private bool isShip;
-    private bool isVisible;
+    private bool isVisible=true;
     private int YCoordinates;
     private int XCoordinates;
     private string symbol;
@@ -41,6 +41,16 @@ namespace battle_ship_in_the_oo_way_getonboard
             return isVisible;
         }
 
+    public void SetIsVisibleTrue()
+        {
+            isVisible = true;
+        }
+
+    public void SetIsVisibleFalse()
+        {
+            isVisible = false;
+        }
+    
     public int GetX()
         {
             return XCoordinates;
