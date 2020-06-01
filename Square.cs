@@ -8,6 +8,7 @@ namespace battle_ship_in_the_oo_way_getonboard
     private bool isHit;
     private bool isMissed;
     private bool isShip;
+    private bool isVisible;
     private int YCoordinates;
     private int XCoordinates;
     private string symbol;
@@ -35,15 +36,20 @@ namespace battle_ship_in_the_oo_way_getonboard
             isMissed = true;
         }
 
+    public bool GetIsVisible()
+        {
+            return isVisible;
+        }
+
     public int GetX()
-    {
-        return XCoordinates;
-    }
+        {
+            return XCoordinates;
+        }
 
     public int GetY()
-    {
-        return YCoordinates;
-    }
+        {
+            return YCoordinates;
+        }
 
 
     public override string ToString()
@@ -51,17 +57,22 @@ namespace battle_ship_in_the_oo_way_getonboard
 
             if (isShip == true)
             {
-                symbol = "@";
-
                 if (isHit == true)
                 {
                     symbol = "X";    
                 }
-                else
+                
+                else if (isVisible == true)
                 {
                     symbol = "@";
                 }
+                
+                else
+                {
+                    symbol = " ";
+                }
             }
+
             else if (isMissed == true)
             {
                 symbol = "*";
