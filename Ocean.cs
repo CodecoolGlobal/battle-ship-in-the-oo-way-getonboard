@@ -16,7 +16,7 @@ namespace battle_ship_in_the_oo_way_getonboard
             
             for (int y = 0; y < WIDTH; y++)
             {
-                boardRow = new List<Square>{}; 
+                boardRow = new List<Square>(); 
 
                 for (int x = 0; x < HEIGHT; x++)
                 {
