@@ -48,8 +48,8 @@ namespace battle_ship_in_the_oo_way_getonboard
         public int GetShipX()
         {
             Console.WriteLine("Enter X Coordinate: ");
-            int y = Convert.ToInt32(Console.ReadLine()) - 1;
-            return y;
+            int x = Convert.ToInt32(Console.ReadLine()) - 1;
+            return x;
         }
 
         public bool GetShipDirection()
@@ -70,6 +70,22 @@ namespace battle_ship_in_the_oo_way_getonboard
                 return GetShipDirection();
             }
 
+        }
+
+        public void Attacked()
+        {
+            var shipY = GetShipY();
+            var shipX = GetShipX();
+            var target = PlayerBoard.GetSquare(shipY, shipX);
+
+            if (target.IsThisShip())
+            {
+                target.IsHit();
+            }
+            else
+            {
+                target.IsMissed();
+            }
         }
 
         public string GetPlayerName()

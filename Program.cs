@@ -23,6 +23,8 @@ namespace battle_ship_in_the_oo_way_getonboard
                 Console.WriteLine("This is your board");
                 Player1.PlayerBoard.RevealAllShips();
                 Console.WriteLine(Player1.PlayerBoard);
+                Console.WriteLine("Give firing coordinates: ");
+                Player2.Attacked();
                 Console.WriteLine("Press any key to end your turn... ");
                 Console.ReadKey();
                 Console.Clear();
@@ -34,6 +36,8 @@ namespace battle_ship_in_the_oo_way_getonboard
                 Console.WriteLine("This is your board");
                 Player2.PlayerBoard.RevealAllShips();
                 Console.WriteLine(Player2.PlayerBoard);
+                Console.WriteLine("Give firing coordinates: ");
+                Player1.Attacked();
                 Console.WriteLine("Press any key to end your turn... ");
                 Console.ReadKey();
                 Console.Clear();

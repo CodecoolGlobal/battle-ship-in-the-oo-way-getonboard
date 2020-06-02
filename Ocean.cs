@@ -27,6 +27,11 @@ namespace battle_ship_in_the_oo_way_getonboard
                
         }
 
+
+    public Square GetSquare(int y, int x)
+    {
+        return Board[y][x];
+    }
     public void PlaceShips(List<Ship> ships)
     {
         foreach (Ship ship in ships)
