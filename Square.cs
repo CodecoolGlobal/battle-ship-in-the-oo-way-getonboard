@@ -61,6 +61,11 @@ namespace battle_ship_in_the_oo_way_getonboard
             return YCoordinates;
         }
 
+    public bool GetIsHit()
+    {
+        return isHit;
+    }
+
 
     public override string ToString()
         {

@@ -66,6 +66,23 @@ namespace battle_ship_in_the_oo_way_getonboard
         }
     }
 
+    public bool IsShipLeft(List<Ship> ships)
+    {
+        foreach (Ship ship in ships)
+        {
+            for (int i = 0; i < ship.GetLength(); i++)
+            {
+                bool isSquareHit = ship.GetSquare(i).GetIsHit();
+
+                if (isSquareHit == false)
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
 
     public override string ToString()
         {

@@ -29,6 +29,15 @@ namespace battle_ship_in_the_oo_way_getonboard
                 PlayerBoard.PlaceShips(shipList);
             }
         }
+
+        public bool IsShipLeft()
+        {
+            if (PlayerBoard.IsShipLeft(shipList))
+            {
+                return true;
+            }
+            return false;
+        }
         public int GetShipY()
         {
             Console.WriteLine("Enter Y Coordinate: ");
