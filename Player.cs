@@ -41,14 +41,14 @@ namespace battle_ship_in_the_oo_way_getonboard
         public int GetShipY()
         {
             Console.WriteLine("Enter Y Coordinate: ");
-            int y = Convert.ToInt32(Console.ReadLine());
+            int y = Convert.ToInt32(Console.ReadLine()) - 1;
             return y;
         }
 
         public int GetShipX()
         {
             Console.WriteLine("Enter X Coordinate: ");
-            int y = Convert.ToInt32(Console.ReadLine());
+            int y = Convert.ToInt32(Console.ReadLine()) - 1;
             return y;
         }
 
