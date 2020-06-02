@@ -12,6 +12,7 @@ namespace battle_ship_in_the_oo_way_getonboard
             Player1.CreateShip();
             var Player2 = new Player("player2name");
             Player2.CreateShip();
+            Console.Clear();
 
             while (true)
             {
