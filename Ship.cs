@@ -8,10 +8,10 @@ namespace battle_ship_in_the_oo_way_getonboard
     {
     private List<Square> Squares;
     private int ShipLength;
-    private bool isVertical;
+    public bool isVertical;
     public static Dictionary<string, int> ShipTypes = new Dictionary<string, int>()
     {
-        {"Carrier", 5}, {"Battleship", 4}, {"Cruiser", 3}, {"Submarine", 3}, {"Destroyer", 2}
+        {"Carrier", 5}, //{"Battleship", 4}, {"Cruiser", 3}, {"Submarine", 3}, {"Destroyer", 2}
     };
 
     public Ship(int shipLength, bool isVertical, int yCoordinates, int xCoordinates)
