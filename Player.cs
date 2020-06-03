@@ -138,10 +138,12 @@ namespace battle_ship_in_the_oo_way_getonboard
             if (target.IsThisShip())
             {
                 target.IsHit();
+                Console.WriteLine("\nHit!\n");
             }
             else
             {
                 target.IsMissed();
+                Console.WriteLine("\nMissed!\n");
             }
         }
 
