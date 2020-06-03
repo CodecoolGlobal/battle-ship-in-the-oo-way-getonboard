@@ -68,16 +68,24 @@ namespace battle_ship_in_the_oo_way_getonboard
             {
                 Console.WriteLine("Enter Y Coordinate A - J: ");
                 char letter = char.Parse(Console.ReadLine());
-                int y = LetterToInt(letter) - 1;
-                if (y<10)
-                    {
-                        return y;
-                    }
-                    else
-                    {
-                        Console.WriteLine("You can only use letters A - J.");
-                        return GetShipY();
-                    }
+                if (char.IsLetter(letter))
+                {
+                    int y = LetterToInt(letter) - 1;
+                    if (y<10)
+                        {
+                            return y;
+                        }
+                        else
+                        {
+                            Console.WriteLine("You can only use letters A - J.");
+                            return GetShipY();
+                        }
+                }
+                else
+                {
+                    Console.WriteLine("You can only use letters A - J.");
+                    return GetShipY();
+                }
             }
             catch (FormatException)
             {
