@@ -108,7 +108,8 @@ namespace battle_ship_in_the_oo_way_getonboard
                     int newSquareY = newShip.GetSquare(j).GetY();
 
                     if (rangeX.Contains(newSquareX) && rangeY.Contains(newSquareY))
-                    
+                    {
+    
                         return true;
                     }
                 }
