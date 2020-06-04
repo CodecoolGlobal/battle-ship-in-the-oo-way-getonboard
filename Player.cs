@@ -8,6 +8,7 @@ namespace battle_ship_in_the_oo_way_getonboard
         public string Name {get; set;}
         public List<Ship> shipList {get; set;}
         public Ocean PlayerBoard {get; set;}
+        
         public Player(string name)
         {
             Name = name;
@@ -39,6 +40,11 @@ namespace battle_ship_in_the_oo_way_getonboard
                         Console.WriteLine("You cannot place a ship outside the board!");
                         continue;
                     }
+                    else if (PlayerBoard.IsShipContacting(shipList, ship))
+                    {
+                        Console.WriteLine("The new ship cannot contact already placed ship!");
+                        continue;
+                    }
                     else
                     {
                     shipList.Add(ship);
@@ -57,11 +63,14 @@ namespace battle_ship_in_the_oo_way_getonboard
             }
             return false;
         }
+
+
         public int LetterToInt(char letter)
         {
             int index = char.ToUpper(letter) - 64;
             return index;
         }
+
         public int GetShipY()
         {
             try

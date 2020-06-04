@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace battle_ship_in_the_oo_way_getonboard
@@ -48,6 +49,7 @@ namespace battle_ship_in_the_oo_way_getonboard
     }
     
 
+
     public void RevealAllShips()
     {
         foreach (List<Square> boardRow in Board)
@@ -88,6 +90,37 @@ namespace battle_ship_in_the_oo_way_getonboard
         return false;
     }
 
+    public bool IsShipContacting(List<Ship> ships, Ship newShip)
+    {
+
+        foreach (Ship ship in ships)
+        {
+            for (int i = 0; i < ship.GetLength(); i++)
+            {
+                int squareX = ship.GetSquare(i).GetX();
+                int squareY = ship.GetSquare(i).GetY();
+                List<int> rangeX = new List<int>{squareX-1, squareX, squareX+1};
+                List<int> rangeY = new List<int>{squareY-1, squareY, squareY+1};
+
+                for (int j = 0; j < newShip.GetLength(); j++)
+                {
+                    int newSquareX = newShip.GetSquare(j).GetX();
+                    int newSquareY = newShip.GetSquare(j).GetY();
+
+                    if (rangeX.Contains(newSquareX) && rangeY.Contains(newSquareY))
+                    {
+                        Console.WriteLine(newSquareX);
+                        Console.WriteLine(newSquareY);
+                        Console.WriteLine(squareX);
+                        Console.WriteLine(squareY);
+                        return true;
+                    }
+                }
+   
+            }
+        }
+        return false;
+    }
 
     public override string ToString()
         {

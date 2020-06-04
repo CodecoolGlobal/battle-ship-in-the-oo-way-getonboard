@@ -43,17 +43,7 @@ namespace battle_ship_in_the_oo_way_getonboard
                 Console.Clear();
 
 
-            }
-            // Player1.CreateShip();
-            // Console.WriteLine(Player1.PlayerBoard);
-            // Player1.PlayerBoard.RevealAllShips();
-            // Console.WriteLine(Player1.PlayerBoard);
-
-            // Player2.CreateShip();
-            // Console.WriteLine(Player2.PlayerBoard);
-            // Player2.PlayerBoard.RevealAllShips();
-            // Console.WriteLine(Player2.PlayerBoard);
- 
+            } 
 
         }
     }
