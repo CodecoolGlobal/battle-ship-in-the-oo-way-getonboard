@@ -7,7 +7,8 @@ namespace battle_ship_in_the_oo_way_getonboard
     {
         static void Main(string[] args)
         {
-            GameController.PvsP();
+            GameController game = new GameController();
+            game.Play();
         }
     }
 }

@@ -8,6 +8,7 @@ namespace battle_ship_in_the_oo_way_getonboard
         public string Name {get; set;}
         public List<Ship> shipList {get; set;}
         public Ocean PlayerBoard {get; set;}
+        public bool IsFirst {get; set;}
         
         public Player(string name)
         {
@@ -146,7 +147,7 @@ namespace battle_ship_in_the_oo_way_getonboard
 
         }
 
-        public void Attacked()
+        public string Attacked()
         {
             var shipY = GetShipY();
             var shipX = GetShipX();
@@ -155,24 +156,24 @@ namespace battle_ship_in_the_oo_way_getonboard
             if (target.IsThisShip())
             {
                 target.IsHit();
-                Console.WriteLine("\nHit!\n");
+                return "\nHit!\n";
             }
             else
             {
                 target.IsMissed();
-                Console.WriteLine("\nMissed!\n");
+                return "\nMissed!\n";
             }
         }
 
         public static string GetPlayerName()
         {
-            Console.WriteLine("Enter Your name: ");
+            Console.WriteLine("\nEnter Your name: \n");
             return Console.ReadLine();
         }
 
         public override string ToString()
         {
-            return $"{Name}'s turn.";
+            return $"\n{Name}'s turn.\n";
         }
     }
 }
