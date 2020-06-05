@@ -73,10 +73,6 @@ namespace battle_ship_in_the_oo_way_getonboard
                 Console.WriteLine("Press any key to end your turn... ");
                 Console.ReadKey();
                 Console.Clear();
-                Console.WriteLine("CHANGE YOUR SEATS!");
-                Console.ReadKey();
-                Console.Clear();
-
                 ChangePlayerTurn();
 
             }
@@ -108,10 +104,17 @@ namespace battle_ship_in_the_oo_way_getonboard
 
         }
 
-        // public void IsWin()
-        // {
-        //     if (Player1.IsShipLeft())
-        // }
+        public void IsWin()
+        {
+            if (Player1.IsShipLeft() == false)
+            {
+                Console.WriteLine($"{Player2.Name} wins!");
+            }
+            else if (Player2.IsShipLeft() == false)
+            {
+                Console.WriteLine($"{Player1.Name} wins!");
+            }
+        }
 
         public void Play()
         {
@@ -120,6 +123,7 @@ namespace battle_ship_in_the_oo_way_getonboard
             Console.ReadKey();
             Console.Clear();
             PlayerTurn();
+            IsWin();
         }
 
         
