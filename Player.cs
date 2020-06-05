@@ -164,7 +164,7 @@ namespace battle_ship_in_the_oo_way_getonboard
             }
         }
 
-        public string GetPlayerName()
+        public static string GetPlayerName()
         {
             Console.WriteLine("Enter Your name: ");
             return Console.ReadLine();
