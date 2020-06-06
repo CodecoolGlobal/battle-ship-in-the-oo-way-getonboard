@@ -12,11 +12,28 @@ namespace battle_ship_in_the_oo_way_getonboard
         public GameController()
         {
             this.Player1 = new Player(Player.GetPlayerName());
-            Player1.CreateShip();
+
+            if (Player1.IsCreateShipAuto())
+            {
+                Player1.AutoCreateShip();
+            }
+            else
+            {
+                Player1.CreateShip();
+            }
+            
             Console.Clear();
 
             this.Player2 = new Player(Player.GetPlayerName());
-            Player2.CreateShip();
+
+            if (Player2.IsCreateShipAuto())
+            {
+                Player2.AutoCreateShip();
+            }
+            else
+            {
+                Player2.CreateShip();
+            }
             Console.Clear();
 
         }

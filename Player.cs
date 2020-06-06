@@ -56,6 +56,54 @@ namespace battle_ship_in_the_oo_way_getonboard
             }
         }
 
+        public void AutoCreateShip()
+        {
+            foreach (KeyValuePair<string, int> item in Ship.ShipTypes)
+            {
+                Console.Clear();
+                Console.WriteLine(PlayerBoard);
+                bool shipNotAdded = true;
+
+                while(shipNotAdded)
+                {
+        
+                    bool shipDirection = new Random().Next(2) == 0;
+                    var shipY = new Random().Next(10);
+                    var shipX = new Random().Next(10);
+                    var ship = new Ship(item.Value, shipDirection, shipY, shipX);
+
+                    if (!PlayerBoard.IsShipContacting(shipList, ship) && (!ship.isVertical && (item.Value + shipX) <= 10) || (!PlayerBoard.IsShipContacting(shipList, ship)) && (ship.isVertical && (item.Value + shipY) <= 10))
+                    {
+                        shipList.Add(ship);
+                        PlayerBoard.PlaceShips(shipList);
+                        shipNotAdded = false;
+                   
+                    }
+
+                }
+            }
+        }
+
+         public bool IsCreateShipAuto()
+        {
+            Console.WriteLine("Would you like your ships to be placed automatically? Y/N");
+            var choice = Console.ReadLine();
+            if(choice.ToUpper() == "Y")
+                {
+                    return true;
+                }
+            else if (choice.ToUpper() == "N")
+                {
+                    return false;
+                }
+            else
+            {
+                Console.WriteLine("You can enter only Y or N.");
+                return IsCreateShipAuto();
+            }
+
+        }
+
         public bool IsShipLeft()
         {
             if (PlayerBoard.IsShipLeft(shipList))
