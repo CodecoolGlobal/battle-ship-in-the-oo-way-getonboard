@@ -66,6 +66,11 @@ namespace battle_ship_in_the_oo_way_getonboard
         return isHit;
     }
 
+    public bool GetIsMissed()
+    {
+        return isMissed;
+    }
+
     public bool IsThisShip()
     {
         return isShip;

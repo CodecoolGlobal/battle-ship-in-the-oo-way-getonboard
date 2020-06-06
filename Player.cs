@@ -201,6 +201,12 @@ namespace battle_ship_in_the_oo_way_getonboard
             var shipX = GetShipX();
             var target = PlayerBoard.GetSquare(shipY, shipX);
 
+            if (IsSquareUsed(target))
+            {
+                Console.WriteLine("This field was already attacked.");
+                return Attacked();
+            }
+
             if (target.IsThisShip())
             {
                 target.IsHit();
@@ -234,6 +240,15 @@ namespace battle_ship_in_the_oo_way_getonboard
                 target.IsMissed();
                 return "\nMissed!\n";
             }
+        }
+
+        public bool IsSquareUsed(Square target)
+        {
+            if (target.GetIsHit() || target.GetIsMissed())
+            {
+                return true;
+            }
+            return false;
         }
 
 
