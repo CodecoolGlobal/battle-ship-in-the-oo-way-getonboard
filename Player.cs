@@ -204,14 +204,39 @@ namespace battle_ship_in_the_oo_way_getonboard
             if (target.IsThisShip())
             {
                 target.IsHit();
-                return "\nHit!\n";
+                        
+                foreach (Ship ship in shipList)
+                {
+                    for (int i = 0; i < ship.GetLength(); i++)
+                    {
+                        if (target == ship.GetSquare(i))
+                        {
+                            for (int j = 0; j < ship.GetLength(); j++)
+                            {
+                                if (!ship.GetSquare(j).GetIsHit())
+                                {
+                                    return "\nHit!\n";
+                                }
+    
+                            }
+                        ship.SetIsSunk();
+                        }
+                        
+                    }
+                    
+                }
+                
+                return "\nHit and sunk!\n";
             }
+            
             else
             {
                 target.IsMissed();
                 return "\nMissed!\n";
             }
         }
+
+
 
         public static string GetPlayerName()
         {

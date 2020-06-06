@@ -3,12 +3,12 @@ using System.Collections.Generic;
 namespace battle_ship_in_the_oo_way_getonboard
 
 {
-
     public class Ship
     {
     private List<Square> Squares;
     private int ShipLength;
     public bool isVertical;
+    private bool isSunk;
     public static Dictionary<string, int> ShipTypes = new Dictionary<string, int>()
     {
         {"Carrier", 5}, {"Battleship", 4}, {"Cruiser", 3}, {"Submarine", 3}, {"Destroyer", 2}
@@ -44,6 +44,17 @@ namespace battle_ship_in_the_oo_way_getonboard
     {
         return Squares[index];
     }
+
+    public bool GetIsSunk()
+    {
+        return isSunk;
+    }
+
+    public void SetIsSunk()
+    {
+        isSunk = true;
+    }
+
 
     }
 }

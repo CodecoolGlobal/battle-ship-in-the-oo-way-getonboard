@@ -35,7 +35,6 @@ namespace battle_ship_in_the_oo_way_getonboard
                 Player2.CreateShip();
             }
             Console.Clear();
-
         }
 
         public void SetFirstPlayer()

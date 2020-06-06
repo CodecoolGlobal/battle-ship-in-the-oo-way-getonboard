@@ -90,6 +90,9 @@ namespace battle_ship_in_the_oo_way_getonboard
         return false;
     }
 
+
+    
+
     public bool IsShipContacting(List<Ship> ships, Ship newShip)
     {
 
