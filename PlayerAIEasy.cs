@@ -12,14 +12,39 @@ namespace battle_ship_in_the_oo_way_getonboard
 
         public PlayerAIEasy(string name)
         {
-            Name = "Komputer";
+            Name = name;
             PlayerBoard = new Ocean();
             shipList = new List<Ship>();
         }
 
 
         public void CreateShip()
-        { }
+        {
+            foreach (KeyValuePair<string, int> item in Ship.ShipTypes)
+            {
+                Console.Clear();
+                Console.WriteLine(PlayerBoard);
+                bool shipNotAdded = true;
+
+                while (shipNotAdded)
+                {
+
+                    bool shipDirection = new Random().Next(2) == 0;
+                    var shipY = new Random().Next(10);
+                    var shipX = new Random().Next(10);
+                    var ship = new Ship(item.Value, shipDirection, shipY, shipX);
+
+                    if (!PlayerBoard.IsShipContacting(shipList, ship) && (!ship.isVertical && (item.Value + shipX) <= 10) || (!PlayerBoard.IsShipContacting(shipList, ship)) && (ship.isVertical && (item.Value + shipY) <= 10))
+                    {
+                        shipList.Add(ship);
+                        PlayerBoard.PlaceShips(shipList);
+                        shipNotAdded = false;
+
+                    }
+
+                }
+            }
+        }
 
         public bool IsShipLeft()
         {
@@ -60,8 +85,31 @@ namespace battle_ship_in_the_oo_way_getonboard
             if (target.IsThisShip())
             {
                 target.IsHit();
-                return "\nHit!\n";
+                        
+                foreach (Ship ship in shipList)
+                {
+                    for (int i = 0; i < ship.GetLength(); i++)
+                    {
+                        if (target == ship.GetSquare(i))
+                        {
+                            for (int j = 0; j < ship.GetLength(); j++)
+                            {
+                                if (!ship.GetSquare(j).GetIsHit())
+                                {
+                                    return "\nHit!\n";
+                                }
+    
+                            }
+                        ship.SetIsSunk();
+                        }
+                        
+                    }
+                    
+                }
+                
+                return "\nHit and sunk!\n";
             }
+            
             else
             {
                 target.IsMissed();
