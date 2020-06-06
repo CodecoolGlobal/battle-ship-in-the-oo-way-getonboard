@@ -7,6 +7,9 @@ namespace battle_ship_in_the_oo_way_getonboard
     {
         static void Main(string[] args)
         {
+            GameController.PrintTitle();
+            Console.ReadKey();
+            Console.Clear();
             Console.WriteLine("1 - To play against player\n");
             Console.WriteLine("2 - To play against AI\n");
             var gameMode = Convert.ToInt32(Console.ReadLine());

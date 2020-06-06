@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace battle_ship_in_the_oo_way_getonboard
 {
@@ -132,8 +133,23 @@ namespace battle_ship_in_the_oo_way_getonboard
             }
         }
 
+
+    public static void PrintTitle()
+    {
+        using (StreamReader stream = File.OpenText(@"title.txt"))
+            {
+            String battleshipTitle = "";
+
+            while ((battleshipTitle = stream.ReadLine()) != null)
+                {
+                Console.WriteLine(battleshipTitle); 
+                }
+            }
+    }
+
         public void Play()
         {
+
             SetFirstPlayer();
             Console.WriteLine("Press any key to start your turn");
             Console.ReadKey();
