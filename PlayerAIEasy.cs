@@ -32,17 +32,23 @@ namespace battle_ship_in_the_oo_way_getonboard
 
         public int GetShipY()
         {
+            Random random = new Random();
+            int y = random.Next(0, 10);
             return y;
         }
 
         public int GetShipX()
         {
-            return y;
+            Random random = new Random();
+            int x = random.Next(0, 10);
+            return x;
         }
 
         public bool GetShipDirection()
         {
-            return direction;
+            Random random = new Random();
+            bool randomDirection = random.Next(2) == 1;
+            return randomDirection;
         }
 
         public string Attacked()
