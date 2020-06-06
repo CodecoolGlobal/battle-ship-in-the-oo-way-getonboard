@@ -43,6 +43,7 @@ namespace battle_ship_in_the_oo_way_getonboard
         {
             while (Player1.IsShipLeft() && PlayerAI.IsShipLeft())
             {
+<<<<<<< Updated upstream
                 Console.WriteLine(Player1);
                 Console.WriteLine("This is the firing board");
                 Player1.PlayerBoard.HideAllShips();
@@ -50,18 +51,36 @@ namespace battle_ship_in_the_oo_way_getonboard
                 Console.WriteLine("This is your board");
                 PlayerAI.PlayerBoard.RevealAllShips();
                 Console.WriteLine(PlayerAI.PlayerBoard);
+=======
+                PrintPlayersBoards(Player1, PlayerAI);
+>>>>>>> Stashed changes
                 Console.WriteLine("Give firing coordinates: ");
-                Player1.Attacked();
+                string message = PlayerAI.Attacked();
+                PrintPlayersBoards(Player1, PlayerAI);
+                Console.WriteLine(message);
                 Console.WriteLine("Press any key to end your turn... ");
                 Console.ReadKey();
                 Console.Clear();
 
                 Console.WriteLine(PlayerAI);
-                PlayerAI.Attacked();
+                Player1.AttackedByAI();
                 Console.ReadKey();
                 Console.Clear();
             }
             IsWin();
+        }
+
+            public void PrintPlayersBoards(Player FirstPlayer, PlayerAIEasy SecondPlayer)
+        {
+            Console.WriteLine(FirstPlayer);
+            Console.WriteLine("\n");
+            Console.WriteLine("This is the firing board");
+            SecondPlayer.PlayerBoard.HideAllShips();
+            Console.WriteLine(SecondPlayer.PlayerBoard);
+            Console.WriteLine("\n");
+            Console.WriteLine("This is your board");
+            FirstPlayer.PlayerBoard.RevealAllShips();
+            Console.WriteLine(FirstPlayer.PlayerBoard);
         }
 
     }

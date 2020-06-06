@@ -120,6 +120,21 @@ namespace battle_ship_in_the_oo_way_getonboard
             return index;
         }
 
+
+        public int GetShipYAI()
+        {
+            Random random = new Random();
+            int y = random.Next(0, 10);
+            return y;
+        }
+
+        public int GetShipXAI()
+        {
+            Random random = new Random();
+            int x = random.Next(0, 10);
+            return x;
+        }
+
         public int GetShipY()
         {
             try
@@ -241,6 +256,53 @@ namespace battle_ship_in_the_oo_way_getonboard
                 return "\nMissed!\n";
             }
         }
+
+        public string AttackedByAI()
+        {
+            var shipY = GetShipYAI();
+            var shipX = GetShipXAI();
+            var target = PlayerBoard.GetSquare(shipY, shipX);
+
+            if (IsSquareUsed(target))
+            {
+                return AttackedByAI();
+            }
+
+            if (target.IsThisShip())
+            {
+                target.IsHit();
+                        
+                foreach (Ship ship in shipList)
+                {
+                    for (int i = 0; i < ship.GetLength(); i++)
+                    {
+                        if (target == ship.GetSquare(i))
+                        {
+                            for (int j = 0; j < ship.GetLength(); j++)
+                            {
+                                if (!ship.GetSquare(j).GetIsHit())
+                                {
+                                    return "\nHit!\n";
+                                }
+    
+                            }
+                        ship.SetIsSunk();
+                        }
+                        
+                    }
+                    
+                }
+                
+                return "\nHit and sunk!\n";
+            }
+            
+            else
+            {
+                target.IsMissed();
+                return "\nMissed!\n";
+            }
+        }
+        
 
         public bool IsSquareUsed(Square target)
         {
