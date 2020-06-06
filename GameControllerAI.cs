@@ -22,7 +22,7 @@ namespace battle_ship_in_the_oo_way_getonboard
             Console.Clear();
 
             this.PlayerAI = new PlayerAIEasy("Komputer");
-            PlayerAI.CreateShip();
+            PlayerAI.AutoCreateShip();
             Console.Clear();
         }
 
@@ -46,6 +46,7 @@ namespace battle_ship_in_the_oo_way_getonboard
                 PrintPlayersBoards(Player1, PlayerAI);
                 Console.WriteLine("Give firing coordinates: ");
                 string message = PlayerAI.Attacked();
+                Console.Clear();
                 PrintPlayersBoards(Player1, PlayerAI);
                 Console.WriteLine(message);
                 Console.WriteLine("Press any key to end your turn... ");
