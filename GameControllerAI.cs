@@ -43,17 +43,7 @@ namespace battle_ship_in_the_oo_way_getonboard
         {
             while (Player1.IsShipLeft() && PlayerAI.IsShipLeft())
             {
-<<<<<<< Updated upstream
-                Console.WriteLine(Player1);
-                Console.WriteLine("This is the firing board");
-                Player1.PlayerBoard.HideAllShips();
-                Console.WriteLine(Player1.PlayerBoard);
-                Console.WriteLine("This is your board");
-                PlayerAI.PlayerBoard.RevealAllShips();
-                Console.WriteLine(PlayerAI.PlayerBoard);
-=======
                 PrintPlayersBoards(Player1, PlayerAI);
->>>>>>> Stashed changes
                 Console.WriteLine("Give firing coordinates: ");
                 string message = PlayerAI.Attacked();
                 PrintPlayersBoards(Player1, PlayerAI);

@@ -144,11 +144,6 @@ namespace battle_ship_in_the_oo_way_getonboard
 
             if (IsSquareUsed(target))
             {
-<<<<<<< Updated upstream
-                return Attacked();
-            }
-
-=======
                 Console.WriteLine("This field was already attacked.");
                 return Attacked();
             }
@@ -198,7 +193,6 @@ namespace battle_ship_in_the_oo_way_getonboard
                 return AttackedByAI();
             }
 
->>>>>>> Stashed changes
             if (target.IsThisShip())
             {
                 target.IsHit();
