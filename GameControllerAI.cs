@@ -45,11 +45,11 @@ namespace battle_ship_in_the_oo_way_getonboard
             {
                 Console.WriteLine(Player1);
                 Console.WriteLine("This is the firing board");
-                PlayerAI.PlayerBoard.HideAllShips();
-                Console.WriteLine(PlayerAI.PlayerBoard);
-                Console.WriteLine("This is your board");
-                Player1.PlayerBoard.RevealAllShips();
+                Player1.PlayerBoard.HideAllShips();
                 Console.WriteLine(Player1.PlayerBoard);
+                Console.WriteLine("This is your board");
+                PlayerAI.PlayerBoard.RevealAllShips();
+                Console.WriteLine(PlayerAI.PlayerBoard);
                 Console.WriteLine("Give firing coordinates: ");
                 Player1.Attacked();
                 Console.WriteLine("Press any key to end your turn... ");
