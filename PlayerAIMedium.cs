@@ -41,21 +41,21 @@ namespace battle_ship_in_the_oo_way_getonboard
                         if(ship.isVertical)
                         {
                         Random randomX = new Random();
-                        int x = randomX.Next(squareX-2, squareX + 1);
+                        int x = randomX.Next(squareX-1, squareX + 2);
                         this.X = x;
 
                         Random randomY = new Random();
-                        int y = randomY.Next(squareY-ship.GetLength() -1, squareY + ship.GetLength());
+                        int y = randomY.Next(squareY-ship.GetLength(), squareY + ship.GetLength());
                         this.Y = y;
                         }
                         else
                         {
                         Random randomX = new Random();
-                        int x = randomX.Next(squareX-ship.GetLength() -1, squareX + ship.GetLength()+1);
+                        int x = randomX.Next(squareX-ship.GetLength(), squareX + ship.GetLength());
                         this.X = x;
 
                         Random randomY = new Random();
-                        int y = randomY.Next(squareY-2, squareY + 1);
+                        int y = randomY.Next(squareY-1, squareY + 2);
                         this.Y = y;
                         }
 
@@ -84,7 +84,12 @@ namespace battle_ship_in_the_oo_way_getonboard
 
         public string AIAttacks(Player player)
         {
+            do
+            {
             SearchHit(player);
+            }
+            while (IsSquareUsed(player.PlayerBoard.GetSquare(Y, X)));
+
             return player.AttackedByAI(GetShipYAI(), GetShipXAI());
         }
         

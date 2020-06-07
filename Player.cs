@@ -249,11 +249,6 @@ namespace battle_ship_in_the_oo_way_getonboard
         {
             var target = PlayerBoard.GetSquare(Y, X);
 
-            if (IsSquareUsed(target))
-            {
-                return AttackedByAI(Y, X);
-            }
-
             if (target.IsThisShip())
             {
                 target.IsHit();
