@@ -21,6 +21,7 @@ namespace battle_ship_in_the_oo_way_getonboard
             }
             Console.Clear();
 
+            
             this.PlayerAI = new PlayerAIEasy("Komputer");
             PlayerAI.AutoCreateShip();
             Console.Clear();
@@ -45,7 +46,7 @@ namespace battle_ship_in_the_oo_way_getonboard
             {
                 PrintPlayersBoards(Player1, PlayerAI);
                 Console.WriteLine("Give firing coordinates: ");
-                string message = PlayerAI.Attacked();
+                string message = Player1.Attacks(PlayerAI);
                 Console.Clear();
                 PrintPlayersBoards(Player1, PlayerAI);
                 Console.WriteLine(message);
@@ -54,7 +55,7 @@ namespace battle_ship_in_the_oo_way_getonboard
                 Console.Clear();
 
                 Console.WriteLine(PlayerAI);
-                Player1.AttackedByAI();
+                PlayerAI.AIAttacks(Player1);
                 Console.ReadKey();
                 Console.Clear();
             }

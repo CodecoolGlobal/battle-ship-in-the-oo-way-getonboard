@@ -121,19 +121,7 @@ namespace battle_ship_in_the_oo_way_getonboard
         }
 
 
-        public int GetShipYAI()
-        {
-            Random random = new Random();
-            int y = random.Next(0, 10);
-            return y;
-        }
-
-        public int GetShipXAI()
-        {
-            Random random = new Random();
-            int x = random.Next(0, 10);
-            return x;
-        }
+ 
 
         public int GetShipY()
         {
@@ -257,15 +245,13 @@ namespace battle_ship_in_the_oo_way_getonboard
             }
         }
 
-        public string AttackedByAI()
+        public string AttackedByAI(int Y, int X)
         {
-            var shipY = GetShipYAI();
-            var shipX = GetShipXAI();
-            var target = PlayerBoard.GetSquare(shipY, shipX);
+            var target = PlayerBoard.GetSquare(Y, X);
 
             if (IsSquareUsed(target))
             {
-                return AttackedByAI();
+                return AttackedByAI(Y, X);
             }
 
             if (target.IsThisShip())
@@ -301,6 +287,11 @@ namespace battle_ship_in_the_oo_way_getonboard
                 target.IsMissed();
                 return "\nMissed!\n";
             }
+        }
+
+        public string Attacks(Player player)
+        {
+            return player.Attacked();
         }
         
 
