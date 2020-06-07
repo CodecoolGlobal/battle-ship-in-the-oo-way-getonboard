@@ -41,21 +41,21 @@ namespace battle_ship_in_the_oo_way_getonboard
                         if(ship.isVertical)
                         {
                         Random randomX = new Random();
-                        int x = randomX.Next(squareX-2, squareX+2);
+                        int x = randomX.Next(squareX-1, squareX+2);
                         this.X = x;
 
                         Random randomY = new Random();
-                        int y = randomY.Next(squareY-3, squareY + 3);
+                        int y = randomY.Next(squareY-ship.GetLength(), squareY + ship.GetLength()+1);
                         this.Y = y;
                         }
                         else
                         {
                         Random randomX = new Random();
-                        int x = randomX.Next(squareX-3, squareX + 3);
+                        int x = randomX.Next(squareX-ship.GetLength(), squareX + ship.GetLength()+1);
                         this.X = x;
 
                         Random randomY = new Random();
-                        int y = randomY.Next(squareY-2, squareY + 2);
+                        int y = randomY.Next(squareY-1, squareY + 2);
                         this.Y = y;
                         }
                     }
