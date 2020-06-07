@@ -58,25 +58,28 @@ namespace battle_ship_in_the_oo_way_getonboard
                         int y = randomY.Next(squareY-2, squareY + 1);
                         this.Y = y;
                         }
+
+                        if(X>9)
+                        {
+                            this.X = 9;
+                        }
+                        else if(X<0)
+                        {
+                            this.X = 0;
+                        }
+                        if(Y>9)
+                        {
+                            this.Y = 9;
+                        }
+                        else if(Y<0)
+                        {
+                            this.Y = 0;
+                        }
+                        return;
                     }
                 }
             }
-            if(X>9)
-            {
-                this.X = 9;
-            }
-            else if(X<0)
-            {
-                this.X = 0;
-            }
-            if(Y>9)
-            {
-                this.Y = 9;
-            }
-            else if(Y<0)
-            {
-                this.Y = 0;
-            }
+            
         }
 
         public string AIAttacks(Player player)
