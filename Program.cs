@@ -20,9 +20,21 @@ namespace battle_ship_in_the_oo_way_getonboard
             }
             else if (gameMode ==2)
             {
-                GameControllerAI game  = new GameControllerAI();
-                game.Game();
+
+                Console.WriteLine("Please choose the difficulty by entering digit: \n1 - Easy \n2 - Medium");
+                var difficultyChoice = Convert.ToInt32(Console.ReadLine());
+                if(difficultyChoice == 1)
+                {
+                    GameControllerAI game  = new GameControllerAI();
+                    game.GameEasy();
+                }
+                else
+                {
+                    GameControllerAI game  = new GameControllerAI();
+                    game.GameMedium();
+                }
             }
+
 
             
         }

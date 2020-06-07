@@ -8,6 +8,8 @@ namespace battle_ship_in_the_oo_way_getonboard
         public Player Player1 { get; set; }
         public PlayerAIEasy PlayerAI { get; set; }
 
+        public PlayerAIMedium PlayerAI2 {get; set;}
+
         public GameControllerAI()
         {
             this.Player1 = new Player(Player.GetPlayerName());
@@ -21,10 +23,14 @@ namespace battle_ship_in_the_oo_way_getonboard
             }
             Console.Clear();
 
-            
-            this.PlayerAI = new PlayerAIEasy("Komputer");
+            this.PlayerAI = new PlayerAIEasy("Jack Sparrow");
             PlayerAI.AutoCreateShip();
             Console.Clear();
+            this.PlayerAI2 = new PlayerAIMedium("Cthulhu");
+            PlayerAI2.AutoCreateShip();
+            Console.Clear();
+            
+
         }
 
         public void IsWin()
@@ -40,7 +46,7 @@ namespace battle_ship_in_the_oo_way_getonboard
         }
 
 
-        public void Game()
+        public void GameEasy()
         {
             while (Player1.IsShipLeft() && PlayerAI.IsShipLeft())
             {
@@ -62,7 +68,30 @@ namespace battle_ship_in_the_oo_way_getonboard
             IsWin();
         }
 
-            public void PrintPlayersBoards(Player FirstPlayer, PlayerAIEasy SecondPlayer)
+        public void GameMedium()
+        {
+            while (Player1.IsShipLeft() && PlayerAI2.IsShipLeft())
+            {
+                PrintPlayersBoards(Player1, PlayerAI2);
+                Console.WriteLine("Give firing coordinates: ");
+                string message = Player1.Attacks(PlayerAI2);
+                Console.Clear();
+                PrintPlayersBoards(Player1, PlayerAI2);
+                Console.WriteLine(message);
+                Console.WriteLine("Press any key to end your turn... ");
+                Console.ReadKey();
+                Console.Clear();
+
+                Console.WriteLine(PlayerAI2);
+                PlayerAI2.AIAttacks(Player1);
+                Console.ReadKey();
+                Console.Clear();
+            }
+            IsWin();
+        }
+        
+
+            public void PrintPlayersBoards(Player FirstPlayer, Player SecondPlayer)
         {
             Console.WriteLine(FirstPlayer);
             Console.WriteLine("\n");
